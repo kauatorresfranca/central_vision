@@ -2,6 +2,7 @@ import * as S from './styles'
 import { ArrowRight, Tag } from 'lucide-react'
 import oculos_grau from '../../../assets/images/oculos_grau1.jpeg'
 import oculos_sol from '../../../assets/images/oculos_sol.jpeg'
+import relogio from '../../../assets/images/relogio.jpeg'
 
 const Products = () => {
   const phone = "5582988369508"
@@ -34,7 +35,7 @@ const Products = () => {
     {
       title: 'Relógios de Pulso',
       description: 'Acessórios exclusivos para completar seu visual com elegância.',
-      image: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=1999&auto=format&fit=crop',
+      image: relogio,
       features: [
         'Mecanismo de Precisão',
         'Aço Inoxidável',
