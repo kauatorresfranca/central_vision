@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { colors, breakpoints } from '../../../../styles'
 
 export const HeroContainer = styled.section`
-  padding: 60px 0;
+  padding: 80px 0;
   background: linear-gradient(135deg, #fff 0%, #f0f7ff 100%);
   overflow: hidden;
 
@@ -39,7 +39,7 @@ export const TextBlock = styled.div`
   h1 {
     font-size: 46px;
     color: ${colors.secondary};
-    line-height: 1.2;
+    line-height: 1.1;
     margin-bottom: 20px;
 
     strong {
@@ -65,7 +65,7 @@ export const TextBlock = styled.div`
 export const ButtonGroup = styled.div`
   display: flex;
   gap: 16px;
-  margin-bottom: 35px;
+  margin-bottom: 40px;
 
   @media (max-width: ${breakpoints.tablet}) {
     justify-content: center;
@@ -98,39 +98,45 @@ export const PrimaryBtn = styled(BaseButton)`
 `
 
 export const SecondaryBtn = styled(BaseButton)`
-  background-color: transparent;
-  color: ${colors.secondary};
-  border: 2px solid ${colors.secondary};
+  background-color: ${colors.primary}10; // Azul com 10% de opacidade
+  color: ${colors.primary};
+  border: 1px solid ${colors.primary}30;
 
   &:hover {
-    background-color: ${colors.secondary};
-    color: #fff;
+    background-color: ${colors.primary}20;
+    transform: translateY(-2px);
   }
 `
 
 export const TrustList = styled.ul`
   display: flex;
-  gap: 20px;
+  gap: 24px;
   padding: 0;
 
   li {
-    font-size: 13px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 600;
     color: ${colors.secondary};
     display: flex;
     align-items: center;
+    gap: 10px;
 
-    &::before {
-      content: '•';
+    .icon-circle {
+      width: 24px;
+      height: 24px;
+      background-color: ${colors.primary}20;
       color: ${colors.primary};
-      margin-right: 8px;
-      font-size: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 
   @media (max-width: ${breakpoints.tablet}) {
     justify-content: center;
     flex-wrap: wrap;
+    gap: 15px;
   }
 `
 
@@ -138,20 +144,25 @@ export const ImageBlock = styled.div`
   position: relative;
 
   .image-frame {
-    border-radius: 20px;
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1);
+    box-shadow: 20px 20px 60px rgba(0, 46, 109, 0.1);
     
     img {
       width: 100%;
       height: 520px;
       object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.03);
     }
   }
 
   @media (max-width: ${breakpoints.tablet}) {
     .image-frame img {
-      height: 350px;
+      height: 380px;
     }
   }
 `

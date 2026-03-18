@@ -2,8 +2,8 @@ import * as S from './styles'
 import { MessageCircle } from 'lucide-react'
 
 const WhatsAppButton = () => {
-  const phone = "5582999999999" // Coloque o número da Rosi aqui (DDI + DDD + Número)
-  const message = encodeURIComponent("Olá! Vi o site da Central Vision e gostaria de agendar uma consulta.")
+  const phone = "5582988369508"
+  const message = encodeURIComponent("Olá! Vi o site da Central Vision e gostaria de agendar um horário.")
 
   return (
     <S.WhatsAppWrapper 

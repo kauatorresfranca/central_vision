@@ -1,5 +1,7 @@
 import * as S from './styles'
 import heroImage from '../../../assets/images/hero2.jpeg'
+// Se preferir, pode trocar por ícones de uma lib como Lucide ou manter apenas o texto estilizado
+import { Check } from 'lucide-react' 
 
 const Hero = () => {
   return (
@@ -11,7 +13,7 @@ const Hero = () => {
             Excelência Visual e Armações Exclusivas na <strong>Central Vision</strong>
           </h1>
           <p>
-            Sua visão merece o cuidado de especialistas. Combinamos precisão técnica de ponta com as melhores marcas para garantir sua saúde visual e estilo no São Jorge.
+            Sua visão merece o cuidado de especialistas. Combinamos atendimento humanizado com as melhores lentes para garantir sua saúde visual e estilo no São Jorge.
           </p>
           
           <S.ButtonGroup>
@@ -24,9 +26,18 @@ const Hero = () => {
           </S.ButtonGroup>
           
           <S.TrustList>
-            <li><span>Laboratório Próprio de Precisão</span></li>
-            <li><span>Curadoria de Marcas Internacionais</span></li>
-            <li><span>Atendimento Especializado</span></li>
+            <li>
+              <div className="icon-circle"><Check size={14} /></div>
+              <span>Lentes de Alta Precisão</span>
+            </li>
+            <li>
+              <div className="icon-circle"><Check size={14} /></div>
+              <span>Armações Selecionadas</span>
+            </li>
+            <li>
+              <div className="icon-circle"><Check size={14} /></div>
+              <span>Atendimento Personalizado</span>
+            </li>
           </S.TrustList>
         </S.TextBlock>
 
