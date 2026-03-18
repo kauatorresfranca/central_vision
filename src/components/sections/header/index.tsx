@@ -27,9 +27,9 @@ const Header = () => {
           <S.Nav isOpen={isMenuOpen}>
             <ul>
               <li><a href="#inicio" onClick={handleLinkClick}>Início</a></li>
-              <li><a href="#servicos" onClick={handleLinkClick}>Serviços</a></li>
               <li><a href="#produtos" onClick={handleLinkClick}>Produtos</a></li>
               <li><a href="#depoimentos" onClick={handleLinkClick}>Depoimentos</a></li>
+              <li><a href="#faq" onClick={handleLinkClick}>Faq</a></li>
               <li><a href="#contato" onClick={handleLinkClick}>Contato</a></li>
             </ul>
           </S.Nav>

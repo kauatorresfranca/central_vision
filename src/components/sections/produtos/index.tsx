@@ -46,7 +46,7 @@ const Products = () => {
   ]
 
   return (
-    <S.ProductsSection id="categorias">
+    <S.ProductsSection id="produtos">
       <div className="container">
         <S.SectionHeader>
           <span className="badge">
