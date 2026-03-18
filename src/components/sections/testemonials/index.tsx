@@ -1,70 +1,69 @@
 import * as S from './styles'
-import { Star } from 'lucide-react'
-import googleIcon from '../../../assets/images/google-color.png' // Certifique-se de ter esse ícone
+import { Star, MessageSquare, CheckCircle2 } from 'lucide-react'
 
 const Testimonials = () => {
   const reviews = [
     {
-      name: "Ana Souza",
-      text: "Atendimento impecável no São Jorge! Os exames são feitos com muita precisão e a armação que escolhi é linda e resistente.",
-      stars: 5,
-      date: "há 2 semanas"
+      name: "Cesar Gomes de Lima",
+      avatar: "https://i.pravatar.cc/150?u=cesar",
+      date: "20/05/2025",
+      text: "Atendimento muito bom. As atendentes deixam a gente à vontade na escolha, explicam bem, tiram nossas dúvidas. Muito bom!!",
+      stars: 5
     },
     {
-      name: "Carlos Alberto",
-      text: "Melhor ótica de Maceió. Fiz meus óculos multifocais e a adaptação foi imediata. Recomendo muito a Central Vision.",
-      stars: 5,
-      date: "há 1 mês"
+      name: "Rosalba Maria Silva",
+      avatar: "https://i.pravatar.cc/150?u=rosalba",
+      date: "14/05/2025",
+      text: "Gostei muito do atendimento da Thayná e da loja. Ano que vem voltarei para renovar.",
+      stars: 5
     },
     {
-      name: "Mariana Lins",
-      text: "Preço justo e qualidade excepcional. O laboratório próprio deles faz toda a diferença na entrega rápida.",
-      stars: 5,
-      date: "há 3 meses"
+      name: "Ana Batista",
+      avatar: "https://i.pravatar.cc/150?u=ana",
+      date: "08/05/2025",
+      text: "Ambiente acolhedor com atendimento excelente por Marília e Thaynar, trazendo informações claras e precisas acerca das lentes e armações.",
+      stars: 5
     }
   ]
 
   return (
-    <S.TestimonialsSection>
+    <S.TestimonialsSection id="depoimentos">
       <div className="container">
         <S.SectionHeader>
-          <img src={googleIcon} alt="Google Reviews" className="google-logo" />
-          <h2>O que nossos clientes dizem no <span>Google</span></h2>
-          <div className="rating-summary">
-            <strong>4.9</strong>
-            <div className="stars">
-              <Star size={16} fill="#FFC107" color="#FFC107" />
-              <Star size={16} fill="#FFC107" color="#FFC107" />
-              <Star size={16} fill="#FFC107" color="#FFC107" />
-              <Star size={16} fill="#FFC107" color="#FFC107" />
-              <Star size={16} fill="#FFC107" color="#FFC107" />
-            </div>
-            <span>(150+ avaliações)</span>
-          </div>
+          <span className="badge">
+            <MessageSquare size={14} /> Depoimentos
+          </span>
+          <h2>O que nossos <span>clientes dizem</span></h2>
+          <p>Confira a experiência de quem já cuida da visão com a gente</p>
         </S.SectionHeader>
 
         <S.ReviewsGrid>
           {reviews.map((rev, index) => (
             <S.ReviewCard key={index}>
-              <div className="card-header">
+              <S.CardHeader>
+                <img src={rev.avatar} alt={rev.name} className="user-avatar" />
                 <div className="user-info">
-                  <strong>{rev.name}</strong>
+                  <div className="name-wrapper">
+                    <strong>{rev.name}</strong>
+                    <CheckCircle2 size={14} fill="#2078f4" color="#fff" />
+                  </div>
                   <span>{rev.date}</span>
                 </div>
-                <img src={googleIcon} alt="G" className="mini-google" />
-              </div>
-              <div className="stars">
+              </S.CardHeader>
+
+              <S.StarsRow>
                 {[...Array(rev.stars)].map((_, i) => (
                   <Star key={i} size={14} fill="#FFC107" color="#FFC107" />
                 ))}
-              </div>
+              </S.StarsRow>
+
               <p>"{rev.text}"</p>
             </S.ReviewCard>
           ))}
         </S.ReviewsGrid>
 
         <S.CtaArea>
-          <a href="https://google.com" target="_blank" rel="noreferrer">
+          <a href="https://www.google.com/search?q=otica+central+vision+maceio" target="_blank" rel="noreferrer">
             Ver todas as avaliações no Google
           </a>
         </S.CtaArea>

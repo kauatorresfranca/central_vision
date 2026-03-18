@@ -2,31 +2,37 @@ import styled from 'styled-components'
 import { colors, breakpoints } from '../../../../styles'
 
 export const ContactSection = styled.section`
-  padding: 80px 0;
-  background-color: #fff;
+  padding: 100px 0;
+  background-color: #fcfcfc;
 `
 
 export const SectionHeader = styled.div`
   text-align: center;
   margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .badge {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 8px;
-    background-color: ${colors.primary}10;
+    background-color: ${colors.primary}15;
     color: ${colors.primary};
     padding: 6px 16px;
-    border-radius: 50px;
-    font-size: 13px;
+    border-radius: 100px;
+    font-size: 14px;
     font-weight: 700;
     margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 
   h2 {
     font-size: 36px;
     color: ${colors.secondary};
     margin-bottom: 12px;
+    font-weight: 700;
 
     span {
       color: ${colors.primary};
@@ -36,6 +42,7 @@ export const SectionHeader = styled.div`
   p {
     font-size: 16px;
     color: #666;
+    max-width: 500px;
   }
 
   @media (max-width: ${breakpoints.tablet}) {
@@ -64,27 +71,33 @@ export const ContactCard = styled.div`
   text-align: center;
   border: 1px solid #f0f0f0;
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
     border-color: ${colors.primary}30;
   }
 
   .icon-box {
-    width: 56px;
-    height: 56px;
-    border-radius: 12px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: ${colors.primary}15;
+    color: ${colors.primary};
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 24px;
-    color: #fff;
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+  }
 
-    &.blue { background: #0095ff; }
-    &.cyan { background: #00ced1; }
-    &.green-teal { background: #00bfa5; }
-    &.green { background: #00c853; }
+  &:hover .icon-box {
+    background-color: ${colors.primary};
+    color: #fff;
+    transform: scale(1.1);
   }
 
   h3 {
@@ -98,27 +111,47 @@ export const ContactCard = styled.div`
     font-size: 15px;
     color: #555;
     line-height: 1.6;
-    margin-bottom: 16px;
-  }
-
-  .link {
-    font-size: 14px;
-    font-weight: 700;
-    color: ${colors.primary};
-    text-decoration: underline;
-    transition: opacity 0.2s;
-
-    &:hover {
-      opacity: 0.7;
-    }
+    margin-bottom: 20px;
+    flex-grow: 1;
   }
 
   .status {
     font-size: 12px;
     font-weight: 700;
-    color: #00c853;
-    background: #00c85315;
-    padding: 4px 12px;
+    padding: 6px 16px;
     border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    &.open {
+      color: #00c853;
+      background: #00c85315;
+    }
+
+    &.closed {
+      color: #ff4d4d;
+      background: #ff4d4d15;
+    }
+  }
+`
+
+export const CardLink = styled.a`
+  font-size: 14px;
+  font-weight: 700;
+  color: ${colors.secondary};
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  border: 1px solid #eee;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: ${colors.secondary};
+    color: #fff;
+    border-color: ${colors.secondary};
   }
 `
