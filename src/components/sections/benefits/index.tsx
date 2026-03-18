@@ -1,5 +1,5 @@
 import * as S from './styles'
-import {  Glasses, Users, ShieldCheck } from 'lucide-react'
+import { Truck, ShieldCheck, Sparkles, Star, Award, Users } from 'lucide-react'
 import benefitsImg from '../../../assets/images/hero.jpeg' 
 
 const Benefits = () => {
@@ -8,37 +8,53 @@ const Benefits = () => {
       <div className="container content">
         <S.ImageSide>
           <img src={benefitsImg} alt="Atendimento Central Vision" />
-          <div className="experience-badge">
-            <strong>+2</strong>
-            <span>Anos de Experiência</span>
-          </div>
+          
+          <S.StatsFlex>
+            <S.StatBlock>
+              <Award size={20} />
+              <strong>+2</strong>
+              <span>Anos</span>
+            </S.StatBlock>
+
+            <S.StatBlock>
+              <Users size={20} />
+              <strong>+1k</strong>
+              <span>Clientes</span>
+            </S.StatBlock>
+
+            <S.StatBlock>
+              <Star size={20} />
+              <strong>4.9</strong>
+              <span>Google</span>
+            </S.StatBlock>
+          </S.StatsFlex>
         </S.ImageSide>
 
         <S.TextSide>
           <span className="subtitle">Nossos Diferenciais</span>
           <h2>Por que a <span>Central Vision</span> é a escolha certa?</h2>
           <p>
-            Não somos apenas uma ótica, somos especialistas em cuidar da sua saúde visual no São Jorge.
+            Unimos tecnologia de ponta e um atendimento humano para garantir que você enxergue o mundo com clareza e estilo.
           </p>
 
           <S.BenefitsList>
             <div className="benefit-item">
               <div className="icon">
-                <Glasses size={24} />
+                <Sparkles size={24} />
               </div>
               <div>
-                <h3>Curadoria de Armações</h3>
-                <p>Modelos selecionados que unem conforto e as últimas tendências.</p>
+                <h3>Lentes de Alta Performance</h3>
+                <p>Trabalhamos com as melhores marcas e tratamentos antirreflexo e proteção digital do mercado.</p>
               </div>
             </div>
 
             <div className="benefit-item">
               <div className="icon">
-                <Users size={24} />
+                <Truck size={24} />
               </div>
               <div>
-                <h3>Especialistas em Visão</h3>
-                <p>Consultores treinados para indicar a melhor lente para o seu grau.</p>
+                <h3>Atendimento em Domicílio</h3>
+                <p>Levamos nossa vitrine e consultoria técnica até você, com toda a comodidade e segurança.</p>
               </div>
             </div>
 
@@ -48,7 +64,7 @@ const Benefits = () => {
               </div>
               <div>
                 <h3>Garantia e Ajuste</h3>
-                <p>Garantia de adaptação e ajustes gratuitos sempre que precisar.</p>
+                <p>Garantia de adaptação em todas as lentes e ajustes gratuitos sempre que você precisar.</p>
               </div>
             </div>
           </S.BenefitsList>

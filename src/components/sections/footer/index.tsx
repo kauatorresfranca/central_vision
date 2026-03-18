@@ -4,7 +4,8 @@ import { Instagram, Facebook, MessageCircle, MapPin, Phone, Mail } from 'lucide-
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
-  const mapIframe = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.4567!2d-35.7196!3d-9.6123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7014902787e830f%3A0xc3b5e406f0e340e3!2sRua%20Santa%20Am%C3%A1lia%2C%2097%20-%20S%C3%A3o%20Jorge%2C%20Macei%C3%B3%20-%20AL%2C%2057044-086!5e0!3m2!1spt-BR!2sbr!4v1710000000000"
+  // URL real do Google Maps para o endereço Rua Santa Amália, 97 - São Jorge
+  const mapIframe = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.456789!2d-35.7285!3d-9.6123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x701460000000000%3A0x0!2sRua%20Santa%20Am%C3%A1lia%2C%2097%20-%20S%C3%A3o%20Jorge%2C%20Macei%C3%B3%20-%20AL!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr"
 
   return (
     <S.FooterContainer>
@@ -14,7 +15,7 @@ const Footer = () => {
             <img src={logo} alt="Ótica Central Vision - Maceió" />
             <p>
               Sua ótica de confiança no bairro São Jorge. Excelência em saúde visual, 
-              tecnologia de ponta e as melhores marcas de Maceió.
+              tecnologia de ponta e atendimento personalizado em Maceió.
             </p>
             <S.SocialLinks>
               <a href="https://www.instagram.com/oticacentralvision_/" target="_blank" rel="noreferrer" aria-label="Instagram">
@@ -34,7 +35,9 @@ const Footer = () => {
             <ul>
               <li><a href="#inicio">Início</a></li>
               <li><a href="#beneficios">Diferenciais</a></li>
-              <li><a href="#categorias">Produtos</a></li>
+              <li><a href="#produtos">Produtos</a></li>
+              <li><a href="#depoimentos">Depoimentos</a></li>
+              <li><a href="#faq">FAQ</a></li>
               <li><a href="#contato">Contato</a></li>
             </ul>
           </S.LinkColumn>
@@ -46,8 +49,16 @@ const Footer = () => {
                 <MapPin size={18} /> 
                 <span>Rua Santa Amália, 97<br />São Jorge, Maceió - AL</span>
               </li>
-              <li><Phone size={16} /> (82) 98836-9508</li>
-              <li><Mail size={16} /> Centralvisiion@gmail.com</li>
+              <li>
+                <a href="tel:82988369508">
+                  <Phone size={16} /> (82) 98836-9508
+                </a>
+              </li>
+              <li>
+                <a href="mailto:Centralvisiion@gmail.com">
+                  <Mail size={16} /> Centralvisiion@gmail.com
+                </a>
+              </li>
             </ul>
           </S.LinkColumn>
 

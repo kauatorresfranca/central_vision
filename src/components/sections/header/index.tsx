@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import * as S from './styles'
 import logo from '../../../assets/images/logo.png'
+import { Phone, Menu, X } from 'lucide-react' // Importando os ícones necessários
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -14,22 +15,25 @@ const Header = () => {
       <S.TopBar>
         <div className="container">
           <p>📍 Ótica no São Jorge, Maceió - Atendimento Personalizado</p>
-          <a href="tel:82988369508" className="phone">(82) 98836-9508</a>
+          <a href="tel:82988369508" className="phone">
+            <Phone size={14} /> (82) 98836-9508
+          </a>
         </div>
       </S.TopBar>
 
       <S.HeaderContainer>
         <div className="container content">
           <S.LogoContainer href="/">
-            <img src={logo} alt="Ótica Central Vision - Óculos de Grau e Sol em Maceió" />
+            <img src={logo} alt="Ótica Central Vision - Maceió" />
           </S.LogoContainer>
 
           <S.Nav isOpen={isMenuOpen}>
             <ul>
               <li><a href="#inicio" onClick={handleLinkClick}>Início</a></li>
+              <li><a href="#beneficios" onClick={handleLinkClick}>Diferenciais</a></li>
               <li><a href="#produtos" onClick={handleLinkClick}>Produtos</a></li>
               <li><a href="#depoimentos" onClick={handleLinkClick}>Depoimentos</a></li>
-              <li><a href="#faq" onClick={handleLinkClick}>Faq</a></li>
+              <li><a href="#faq" onClick={handleLinkClick}>FAQ</a></li>
               <li><a href="#contato" onClick={handleLinkClick}>Contato</a></li>
             </ul>
           </S.Nav>
@@ -39,10 +43,8 @@ const Header = () => {
               Agendar Horário
             </S.WhatsappBtn>
             
-            <S.MobileMenu isOpen={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              <span />
-              <span />
-              <span />
+            <S.MobileMenu onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </S.MobileMenu>
           </S.Actions>
         </div>

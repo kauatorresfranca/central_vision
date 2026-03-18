@@ -1,5 +1,5 @@
 import * as S from './styles'
-import { MessageCircle } from 'lucide-react'
+import { FaWhatsapp } from 'react-icons/fa' // Ícone oficial do WhatsApp
 
 const WhatsAppButton = () => {
   const phone = "5582988369508"
@@ -13,7 +13,7 @@ const WhatsAppButton = () => {
       aria-label="Fale conosco pelo WhatsApp"
     >
       <S.Tooltip>Agendar Exame</S.Tooltip>
-      <MessageCircle size={32} />
+      <FaWhatsapp size={35} />
     </S.WhatsAppWrapper>
   )
 }

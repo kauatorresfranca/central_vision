@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components'
 import { colors, breakpoints } from '../../../../styles'
 
 const slideIn = keyframes`
-  from { opacity: 0; transform: translateY(-10px); }
+  from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 `
 
@@ -11,13 +11,13 @@ export const HeaderWrapper = styled.div`
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 `
 
 export const TopBar = styled.div`
   background-color: ${colors.secondary};
   color: #fff;
-  padding: 8px 0;
+  padding: 10px 0;
   font-size: 13px;
 
   .container {
@@ -26,16 +26,28 @@ export const TopBar = styled.div`
     align-items: center;
   }
 
+  .phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+
+    &:hover { opacity: 0.8; }
+  }
+
   @media (max-width: ${breakpoints.tablet}) {
     .phone { display: none; }
-    text-align: center;
-    justify-content: center;
+    .container { justify-content: center; }
   }
 `
 
 export const HeaderContainer = styled.header`
   background-color: #fff;
-  padding: 15px 0;
+  padding: 12px 0;
+  border-bottom: 1px solid #f5f5f5;
 
   .content {
     display: flex;
@@ -45,25 +57,29 @@ export const HeaderContainer = styled.header`
 `
 
 export const LogoContainer = styled.a`
+  display: flex;
   img {
-    height: 60px;
+    height: 55px;
     width: auto;
+    @media (max-width: ${breakpoints.mobile}) {
+      height: 45px;
+    }
   }
 `
 
 export const Nav = styled.nav<{ isOpen: boolean }>`
   ul {
     display: flex;
-    gap: 32px;
+    gap: 28px;
     list-style: none;
 
     li a {
-      color: ${colors.text}; // Mantido conforme seu original
-      font-weight: 400;     // Mantido conforme seu original
+      color: ${colors.text};
+      font-weight: 600;
       font-size: 15px;
       position: relative;
       padding-bottom: 4px;
-      transition: color 0.3s ease;
+      transition: all 0.3s ease;
       text-decoration: none;
 
       &::after {
@@ -79,28 +95,27 @@ export const Nav = styled.nav<{ isOpen: boolean }>`
 
       &:hover {
         color: ${colors.primary};
-        &::after {
-          width: 100%;
-        }
+        &::after { width: 100%; }
       }
     }
   }
 
   @media (max-width: ${breakpoints.tablet}) {
-    display: ${props => (props.isOpen ? 'block' : 'none')};
+    display: ${props => (props.isOpen ? 'flex' : 'none')};
+    flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
     background: #fff;
-    padding: 30px;
-    border-top: 1px solid #f0f0f0;
+    padding: 40px 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     animation: ${slideIn} 0.3s ease-out;
 
     ul {
       flex-direction: column;
-      gap: 20px;
-      text-align: center;
+      align-items: center;
+      gap: 25px;
     }
   }
 `
@@ -108,56 +123,42 @@ export const Nav = styled.nav<{ isOpen: boolean }>`
 export const Actions = styled.div`
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 `
 
 export const WhatsappBtn = styled.a`
-  background-color: ${colors.accent};
+  background-color: ${colors.primary};
   color: #fff;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border-radius: 8px;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
   text-decoration: none;
-  transition: transform 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px ${colors.primary}30;
 
   &:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px ${colors.primary}50;
+    filter: brightness(1.1);
   }
 
-  @media (max-width: ${breakpoints.mobile}) {
+  @media (max-width: ${breakpoints.laptop}) {
     display: none;
   }
 `
 
-export const MobileMenu = styled.button<{ isOpen: boolean }>`
+export const MobileMenu = styled.button`
   display: none;
-  flex-direction: column;
-  gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
-
-  span {
-    width: 25px;
-    height: 3px;
-    background-color: ${colors.text};
-    transition: all 0.3s ease;
-    border-radius: 2px;
-
-    /* Adicionei apenas a lógica para o X aqui */
-    &:nth-child(1) {
-      transform: ${props => props.isOpen ? 'rotate(45deg) translate(5px, 6px)' : 'none'};
-    }
-    &:nth-child(2) {
-      opacity: ${props => props.isOpen ? '0' : '1'};
-    }
-    &:nth-child(3) {
-      transform: ${props => props.isOpen ? 'rotate(-45deg) translate(5px, -6px)' : 'none'};
-    }
-  }
+  color: ${colors.secondary};
+  padding: 5px;
 
   @media (max-width: ${breakpoints.tablet}) {
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `

@@ -6,7 +6,7 @@ const pulse = keyframes`
   100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 `
 
-export const Tooltip = styled.span`/
+export const Tooltip = styled.span`
   position: absolute;
   right: 70px;
   background-color: #333;
@@ -19,6 +19,7 @@ export const Tooltip = styled.span`/
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
+  pointer-events: none;
 
   &::after {
     content: '';
@@ -36,8 +37,8 @@ export const WhatsAppWrapper = styled.a`
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   background-color: #25d366;
   color: #fff;
   border-radius: 50%;
@@ -47,10 +48,17 @@ export const WhatsAppWrapper = styled.a`
   z-index: 9999;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   animation: ${pulse} 2s infinite;
-  transition: transform 0.3s ease;
+  text-decoration: none;
+
+  svg {
+    /* Garante que o ícone fique centralizado independente de padding */
+    display: block;
+  }
 
   &:hover {
+    animation: none; /* Para a animação ao passar o mouse para facilitar o clique */
     transform: scale(1.1);
+    background-color: #20ba5a;
     
     ${Tooltip} {
       opacity: 1;
@@ -62,7 +70,11 @@ export const WhatsAppWrapper = styled.a`
   @media (max-width: 768px) {
     bottom: 20px;
     right: 20px;
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
+
+    ${Tooltip} {
+      display: none; /* Esconde tooltip no mobile para não atrapalhar */
+    }
   }
 `

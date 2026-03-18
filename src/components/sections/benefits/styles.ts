@@ -30,34 +30,66 @@ export const ImageSide = styled.div`
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   }
 
-  .experience-badge {
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    background-color: ${colors.primary};
-    color: #fff;
-    padding: 24px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 10px 20px rgba(0, 149, 255, 0.3);
-
-    strong {
-      display: block;
-      font-size: 32px;
-      line-height: 1;
-    }
-    span {
-      font-size: 12px;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-  }
-
   @media (max-width: ${breakpoints.tablet}) {
     order: 2;
-    .experience-badge {
-      right: 20px;
-    }
+  }
+`
+
+export const StatsFlex = styled.div`
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  width: 90%;
+  justify-content: center;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    bottom: 20px;
+    gap: 10px;
+  }
+`
+
+export const StatBlock = styled.div`
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 100px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: ${colors.primary};
+
+  strong {
+    font-size: 22px;
+    font-weight: 800;
+    margin-top: 8px;
+    color: ${colors.secondary};
+  }
+
+  span {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #666;
+    letter-spacing: 0.5px;
+  }
+
+  svg {
+    opacity: 0.8;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    padding: 12px;
+    strong { font-size: 18px; }
+    span { font-size: 9px; }
   }
 `
 
@@ -86,11 +118,6 @@ export const TextSide = styled.div`
     font-size: 18px;
     margin-bottom: 40px;
   }
-
-  @media (max-width: ${breakpoints.tablet}) {
-    h2 { font-size: 32px; }
-  }
-
 `
 
 export const BenefitsList = styled.div`
@@ -124,7 +151,6 @@ export const BenefitsList = styled.div`
 
     p {
       font-size: 15px;
-      margin-bottom: 0;
       line-height: 1.5;
     }
   }
