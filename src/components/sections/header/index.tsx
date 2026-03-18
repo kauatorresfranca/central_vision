@@ -25,7 +25,8 @@ const Header = () => {
           <S.Nav isOpen={isMenuOpen}>
             <ul>
               <li><a href="#inicio">Início</a></li>
-              <li><a href="#servicos">Exames e Serviços</a></li>
+              <li><a href="#armacoes">Sobre Nós</a></li>
+              <li><a href="#servicos">Serviços</a></li>
               <li><a href="#armacoes">Armações</a></li>
               <li><a href="#contato">Localização</a></li>
             </ul>
