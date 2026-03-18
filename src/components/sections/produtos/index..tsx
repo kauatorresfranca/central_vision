@@ -23,7 +23,7 @@ const Categories = () => {
   ]
 
   return (
-    <S.CategoriesSection id="armacoes">
+    <S.CategoriesSection id="produtos">
       <div className="container">
         <S.TitleArea>
           <h2>Soluções em <span>Saúde Visual</span></h2>

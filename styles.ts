@@ -29,11 +29,14 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Inter', 'Roboto', sans-serif; // Fontes limpas ajudam no UX
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
         background-color: ${colors.background};
         color: ${colors.text};
         -webkit-font-smoothing: antialiased;
-        scroll-behavior: smooth;
     }
 
     .container {
