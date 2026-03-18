@@ -8,6 +8,7 @@ import Header from "./components/sections/header"
 import Hero from "./components/sections/hero"
 import Services from "./components/sections/services"
 import Testimonials from "./components/sections/testemonials"
+import WhatsAppButton from "./components/wpp-button"
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
       <Testimonials />
       <FAQ />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

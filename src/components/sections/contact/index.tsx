@@ -19,8 +19,8 @@ const Contact = () => {
               <Phone size={24} />
             </div>
             <h3>Telefone</h3>
-            <p>(82) 3333-4444</p>
-            <a href="tel:8233334444" className="link">Ligar agora</a>
+            <p>(82) 98836-9508</p>
+            <a href="tel:82988369508" className="link">Ligar agora</a>
           </S.ContactCard>
 
           <S.ContactCard>
@@ -28,8 +28,8 @@ const Contact = () => {
               <Mail size={24} />
             </div>
             <h3>E-mail</h3>
-            <p>contato@centralvision.com.br</p>
-            <a href="mailto:contato@centralvision.com.br" className="link">Enviar e-mail</a>
+            <p>Centralvisiion@gmail.com</p>
+            <a href="mailto:Centralvisiion@gmail.com" className="link">Enviar e-mail</a>
           </S.ContactCard>
 
           <S.ContactCard>
