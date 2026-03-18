@@ -1,50 +1,89 @@
 import * as S from './styles'
+import { ArrowRight, Tag } from 'lucide-react'
+import oculos_grau from '../../../assets/images/oculos_grau1.jpeg'
+import oculos_sol from '../../../assets/images/oculos_sol.jpeg'
 
-const Categories = () => {
-  const categories = [
+const Products = () => {
+  const phone = "5582988369508"
+
+  const productsList = [
     {
       title: 'Óculos de Grau',
-      description: 'Armações de alta tecnologia e precisão visual.',
-      image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=1780&auto=format&fit=crop',
-      link: '#grau'
+      description: 'Armações modernas e lentes digitais de alta precisão.',
+      image: oculos_grau,
+      features: [
+        'Lentes Digitais',
+        'Antirreflexo Premium',
+        'Proteção contra Luz Azul',
+        'Garantia de Adaptação'
+      ],
+      message: 'Olá! Vi o site da Central Vision e quero saber mais sobre Óculos de Grau.'
     },
     {
       title: 'Óculos de Sol',
-      description: 'Proteção UV com o máximo de estilo e conforto.',
-      image: 'https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?q=80&w=2070&auto=format&fit=crop',
-      link: '#sol'
+      description: 'Estilo e proteção completa para os dias ensolarados de Maceió.',
+      image: oculos_sol,
+      features: [
+        'Proteção UV400',
+        'Lentes Polarizadas',
+        'Design Sofisticado',
+        'Marcas Selecionadas'
+      ],
+      message: 'Olá! Vi o site e gostaria de conhecer os Óculos de Sol.'
     },
     {
-      title: 'Lentes de Contato',
-      description: 'Liberdade e tecnologia para o seu dia a dia.',
-      image: 'https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=1935&auto=format&fit=crop',
-      link: '#lentes'
+      title: 'Relógios de Pulso',
+      description: 'Acessórios exclusivos para completar seu visual com elegância.',
+      image: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=1999&auto=format&fit=crop',
+      features: [
+        'Mecanismo de Precisão',
+        'Aço Inoxidável',
+        'Coleções Exclusivas',
+        'Caixa de Presente'
+      ],
+      message: 'Olá! Vi o site e tenho interesse nos Relógios.'
     }
   ]
 
   return (
-    <S.CategoriesSection id="produtos">
+    <S.ProductsSection id="categorias">
       <div className="container">
-        <S.TitleArea>
-          <h2>Soluções em <span>Saúde Visual</span></h2>
-          <p>Explore nossas coleções exclusivas e encontre o modelo perfeito para você.</p>
-        </S.TitleArea>
+        <S.SectionHeader>
+          <span className="badge">
+            <Tag size={14} /> Nossos Produtos
+          </span>
+          <h2>Saúde Visual e <span>Estilo Completo</span></h2>
+          <p>Tudo o que você precisa no bairro São Jorge para cuidar da sua visão.</p>
+        </S.SectionHeader>
 
-        <S.Grid>
-          {categories.map((cat, index) => (
-            <S.CategoryCard key={index} href={cat.link}>
-              <img src={cat.image} alt={cat.title} />
-              <S.Overlay className="overlay">
-                <h3>{cat.title}</h3>
-                <p>{cat.description}</p>
-                <span className="btn-fake">Ver Modelos</span>
-              </S.Overlay>
-            </S.CategoryCard>
+        <S.CardsGrid>
+          {productsList.map((product, index) => (
+            <S.ProductCard key={index}>
+              <div className="image-wrapper">
+                <img src={product.image} alt={`Ótica Central Vision - ${product.title}`} />
+              </div>
+              <S.CardBody>
+                <h3>{product.title}</h3>
+                <p>{product.description}</p>
+                <S.FeaturesList>
+                  {product.features.map((feature, fIndex) => (
+                    <li key={fIndex}>• {feature}</li>
+                  ))}
+                </S.FeaturesList>
+                <S.WhatsappCta 
+                  href={`https://wa.me/${phone}?text=${encodeURIComponent(product.message)}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Ver Coleção <ArrowRight size={16} />
+                </S.WhatsappCta>
+              </S.CardBody>
+            </S.ProductCard>
           ))}
-        </S.Grid>
+        </S.CardsGrid>
       </div>
-    </S.CategoriesSection>
+    </S.ProductsSection>
   )
 }
 
-export default Categories
+export default Products
