@@ -1,44 +1,37 @@
 import styled, { keyframes } from 'styled-components'
 
 const pulse = keyframes`
-  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-  70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 `
 
-export const Tooltip = styled.span`
+export const Label = styled.span`
   position: absolute;
-  right: 70px;
-  background-color: #333;
-  color: #fff;
-  padding: 8px 15px;
-  border-radius: 8px;
+  right: 20px;
+  background: white;
+  color: #25d366;
+  padding: 10px 25px 10px 20px;
+  border-radius: 50px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Efeito de surgimento */
   opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
+  transform: translateX(20px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: -1;
   pointer-events: none;
-
-  &::after {
-    content: '';
-    position: absolute;
-    right: -6px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-top: 6px solid transparent;
-    border-bottom: 6px solid transparent;
-    border-left: 6px solid #333;
-  }
 `
 
 export const WhatsAppWrapper = styled.a`
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
   background-color: #25d366;
   color: #fff;
   border-radius: 50%;
@@ -46,35 +39,30 @@ export const WhatsAppWrapper = styled.a`
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
   animation: ${pulse} 2s infinite;
   text-decoration: none;
-
-  svg {
-    /* Garante que o ícone fique centralizado independente de padding */
-    display: block;
-  }
+  transition: all 0.3s ease;
 
   &:hover {
-    animation: none; /* Para a animação ao passar o mouse para facilitar o clique */
     transform: scale(1.1);
     background-color: #20ba5a;
     
-    ${Tooltip} {
+    ${Label} {
       opacity: 1;
-      visibility: visible;
-      right: 80px;
+      transform: translateX(-45px); /* Move a pílula para a esquerda do botão */
+      z-index: -1;
     }
   }
 
   @media (max-width: 768px) {
     bottom: 20px;
     right: 20px;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
 
-    ${Tooltip} {
-      display: none; /* Esconde tooltip no mobile para não atrapalhar */
+    ${Label} {
+      display: none;
     }
   }
 `

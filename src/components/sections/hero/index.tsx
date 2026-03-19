@@ -20,7 +20,7 @@ const Hero = () => {
             <S.PrimaryBtn href="https://wa.me/seunumero" target="_blank">
               Agendar Atendimento
             </S.PrimaryBtn>
-            <S.SecondaryBtn href="#armacoes">
+            <S.SecondaryBtn href="#produtos">
               Ver Coleção
             </S.SecondaryBtn>
           </S.ButtonGroup>

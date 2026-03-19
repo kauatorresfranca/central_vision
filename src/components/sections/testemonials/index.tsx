@@ -73,7 +73,7 @@ const Testimonials = () => {
         </S.ReviewsGrid>
 
         <S.CtaArea>
-          <a href="https://www.google.com/search?q=otica+central+vision+maceio" target="_blank" rel="noreferrer">
+          <a href="https://www.google.com/search?q=otica+central+vision" target="_blank" rel="noreferrer">
             Ver todas as avaliações no Google
           </a>
         </S.CtaArea>

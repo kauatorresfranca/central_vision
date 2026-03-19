@@ -1,5 +1,5 @@
 import * as S from './styles'
-import { FaWhatsapp } from 'react-icons/fa' // Ícone oficial do WhatsApp
+import { FaWhatsapp } from 'react-icons/fa'
 
 const WhatsAppButton = () => {
   const phone = "5582988369508"
@@ -12,8 +12,8 @@ const WhatsAppButton = () => {
       rel="noreferrer"
       aria-label="Fale conosco pelo WhatsApp"
     >
-      <S.Tooltip>Agendar Exame</S.Tooltip>
-      <FaWhatsapp size={35} />
+      <S.Label>Agendar Horário</S.Label>
+      <FaWhatsapp size={32} />
     </S.WhatsAppWrapper>
   )
 }
