@@ -3,7 +3,7 @@ import { Star, MessageSquare, CheckCircle2 } from 'lucide-react'
 import logoGoogle from '../../../assets/images/google-color.png'
 
 import ticiana from '../../../assets/images/ticiana.png'
-import WictorChristopher from '../../../assets/images/wictor.png'
+import WictorChristopher from '../../../assets/images/Wictor.png'
 import carlosRoberto from '../../../assets/images/carlos.png'
 
 
