@@ -1,12 +1,15 @@
+import { Suspense, lazy } from 'react' // Importamos as ferramentas de carregamento tardio
 import Header from "./components/sections/header"
 import Hero from "./components/sections/hero"
-import Benefits from "./components/sections/benefits"
-import Produtos from "./components/sections/produtos"
-import Testimonials from "./components/sections/testemonials"
-import FAQ from "./components/sections/faq"
-import Contact from "./components/sections/contact"
-import Footer from "./components/sections/footer"
-import WhatsAppButton from "./components/wpp-button"
+
+// As seções que ficam "abaixo da dobra" (que o usuário não vê de cara) são carregadas via lazy
+const Benefits = lazy(() => import("./components/sections/benefits"))
+const Produtos = lazy(() => import("./components/sections/produtos"))
+const Testimonials = lazy(() => import("./components/sections/testemonials"))
+const FAQ = lazy(() => import("./components/sections/faq"))
+const Contact = lazy(() => import("./components/sections/contact"))
+const Footer = lazy(() => import("./components/sections/footer"))
+const WhatsAppButton = lazy(() => import("./components/wpp-button"))
 
 const App = () => {
   return (
@@ -14,14 +17,16 @@ const App = () => {
       <Header />
       <main>
         <Hero />
-        <Benefits />      {/* Entrega valor logo de cara */}
-        <Produtos />      {/* Mostra o que ele quer comprar */}
-        <Testimonials />  {/* Prova social para gerar confiança */}
-        <FAQ />           {/* Tira as dúvidas que impedem a compra */}
-        <Contact />       {/* Localização e canais diretos */}
+        <Suspense fallback={null}>
+          <Benefits />
+          <Produtos />
+          <Testimonials />
+          <FAQ />
+          <Contact />
+          <Footer />
+          <WhatsAppButton />
+        </Suspense>
       </main>
-      <Footer />
-      <WhatsAppButton />
     </>
   )
 }
