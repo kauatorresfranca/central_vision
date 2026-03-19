@@ -142,16 +142,20 @@ export const CardLink = styled.a`
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
+  justify-content: center; /* Centraliza o texto e ícone */
+  gap: 8px;
+  padding: 12px 20px; /* Aumentei levemente o padding para um clique melhor */
   border-radius: 8px;
-  background-color: #f8f9fa;
+  background-color: #f3f3f3;
   border: 1px solid #eee;
   transition: all 0.2s ease;
+  width: 100%; /* Faz o botão ocupar a largura total do card */
+  margin-top: auto; /* Empurra o botão para o rodapé do card se houver diferença de altura */
 
   &:hover {
     background-color: ${colors.secondary};
     color: #fff;
     border-color: ${colors.secondary};
+    transform: translateY(-2px); /* Efeito suave de subida no hover */
   }
 `
