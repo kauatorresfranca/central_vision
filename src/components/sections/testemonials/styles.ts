@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { colors, breakpoints } from '../../../../styles'
 
 export const TestimonialsSection = styled.section`
-  padding: 100px 0;
+  padding: 80px 0;
   background-color: #f8faff;
 `
 

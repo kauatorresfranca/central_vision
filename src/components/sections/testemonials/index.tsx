@@ -2,27 +2,33 @@ import * as S from './styles'
 import { Star, MessageSquare, CheckCircle2 } from 'lucide-react'
 import logoGoogle from '../../../assets/images/google-color.png'
 
+import ticiana from '../../../assets/images/ticiana.png'
+import WictorChristopher from '../../../assets/images/wictor.png'
+import carlosRoberto from '../../../assets/images/carlos.png'
+
+
+
 const Testimonials = () => {
   const reviews = [
     {
-      name: "Cesar Gomes de Lima",
-      avatar: "https://i.pravatar.cc/150?u=cesar",
+      name: "Ticiana Moura",
+      avatar: ticiana,
       date: "20/05/2025",
-      text: "Atendimento muito bom. As atendentes deixam a gente à vontade na escolha, explicam bem, tiram nossas dúvidas. Muito bom!!",
+      text: "qualidade excepcional !",
       stars: 5
     },
     {
-      name: "Rosalba Maria Silva",
-      avatar: "https://i.pravatar.cc/150?u=rosalba",
-      date: "14/05/2025",
-      text: "Gostei muito do atendimento da Thayná e da loja. Ano que vem voltarei para renovar.",
+      name: "Wictor Christopher",
+      avatar: WictorChristopher,
+      date: "14/04/2025",
+      text: "Comprei um óculos excelente e fui muito bem atendido!",
       stars: 5
     },
     {
-      name: "Ana Batista",
-      avatar: "https://i.pravatar.cc/150?u=ana",
-      date: "08/05/2025",
-      text: "Ambiente acolhedor com atendimento excelente por Marília e Thaynar, trazendo informações claras e precisas acerca das lentes e armações.",
+      name: "Carlos Roberto",
+      avatar: carlosRoberto,
+      date: "08/04/2025",
+      text: "Uma loja acolhedora, com um trabalho impecável! Gostei demais do meu óculos e do atendimento prestado. RECOMENDO!!!!",
       stars: 5
     }
   ]

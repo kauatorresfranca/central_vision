@@ -2,7 +2,6 @@ import Header from "./components/sections/header"
 import Hero from "./components/sections/hero"
 import Benefits from "./components/sections/benefits"
 import Produtos from "./components/sections/produtos"
-import AboutMe from "./components/sections/about-me"
 import Testimonials from "./components/sections/testemonials"
 import FAQ from "./components/sections/faq"
 import Contact from "./components/sections/contact"
@@ -17,7 +16,6 @@ const App = () => {
         <Hero />
         <Benefits />      {/* Entrega valor logo de cara */}
         <Produtos />      {/* Mostra o que ele quer comprar */}
-        <AboutMe />       {/* Quem é a Central Vision e a Rosi */}
         <Testimonials />  {/* Prova social para gerar confiança */}
         <FAQ />           {/* Tira as dúvidas que impedem a compra */}
         <Contact />       {/* Localização e canais diretos */}

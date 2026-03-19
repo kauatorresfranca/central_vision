@@ -31,6 +31,7 @@ export const GlobalStyle = createGlobalStyle`
 
     html {
         scroll-behavior: smooth;
+        scroll-padding-top: 87px;
     }
 
     body {

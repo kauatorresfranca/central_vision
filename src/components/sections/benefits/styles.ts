@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { colors, breakpoints } from '../../../../styles'
 
 export const BenefitsSection = styled.section`
-  padding: 100px 0;
+  padding: 80px 0;
   background-color: #fff;
 
   .content {
@@ -123,7 +123,7 @@ export const TextSide = styled.div`
 export const BenefitsList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 
   .benefit-item {
     display: flex;

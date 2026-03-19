@@ -1,5 +1,5 @@
 import * as S from './styles'
-import { Truck, ShieldCheck, Sparkles, Star, Award, Users } from 'lucide-react'
+import { Truck, ShieldCheck, Sparkles, Star, Award, Users, Baby } from 'lucide-react' // Importado SmileStyle
 import benefitsImg from '../../../assets/images/hero.jpeg' 
 
 const Benefits = () => {
@@ -67,6 +67,17 @@ const Benefits = () => {
                 <p>Garantia de adaptação em todas as lentes e ajustes gratuitos sempre que você precisar.</p>
               </div>
             </div>
+
+            <div className="benefit-item"> {/* Novo Item Infantil */}
+              <div className="icon">
+                <Baby size={24} />
+              </div>
+              <div>
+                <h3>Especialistas em Crianças</h3>
+                <p>Armações flexíveis, duráveis e um atendimento paciente e carinhoso para os pequenos.</p>
+              </div>
+            </div>
+
           </S.BenefitsList>
         </S.TextSide>
       </div>

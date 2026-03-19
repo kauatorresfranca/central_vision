@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { colors } from '../../../../styles'
 
 export const FaqSection = styled.section`
-  padding: 100px 0;
+  padding: 80px 0;
   background-color: #fff;
 `
 
