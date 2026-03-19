@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.oticacentralvision.com.br/sitemap.xml
