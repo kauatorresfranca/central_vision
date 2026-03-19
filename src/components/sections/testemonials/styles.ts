@@ -110,7 +110,7 @@ export const CardHeader = styled.div`
       gap: 6px;
 
       strong {
-        color: ${colors.secondary};
+        color: ${colors.text};
         font-size: 15px;
         font-weight: 700;
       }
@@ -141,10 +141,10 @@ export const CtaArea = styled.div`
 
   a {
     font-weight: 700;
-    color: ${colors.primary};
+    color: ${colors.text}70;
     text-decoration: none;
     font-size: 16px;
-    border-bottom: 2px solid ${colors.primary}30;
+    border-bottom: 2px solid ${colors.text}60;
     padding-bottom: 4px;
     transition: all 0.2s;
     
