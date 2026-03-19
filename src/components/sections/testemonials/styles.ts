@@ -36,26 +36,9 @@ export const SectionHeader = styled.div`
     span { color: ${colors.primary}; }
   }
 
-  .rating-summary {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    font-size: 15px;
+  p {
     color: #666;
-
-    strong { 
-      font-size: 20px; 
-      color: ${colors.secondary}; 
-      font-weight: 800;
-    }
-    
-    .stars { display: flex; gap: 3px; }
-
-    @media (max-width: ${breakpoints.mobile}) {
-      flex-direction: column;
-      gap: 8px;
-    }
+    font-size: 16px;
   }
 `
 
@@ -76,31 +59,45 @@ export const ReviewsGrid = styled.div`
 export const ReviewCard = styled.div`
   background: #fff;
   padding: 24px;
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   border: 1px solid #eee;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  }
 
   p {
     font-size: 15px;
     color: #444;
     line-height: 1.6;
-    margin-top: 12px;
+    margin-top: 15px;
+    font-style: italic;
   }
 `
 
 export const CardHeader = styled.div`
   display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 8px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+
+  .user-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
 
   .user-avatar {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     object-fit: cover;
+    border: 2px solid #f0f0f0;
   }
 
   .user-info {
@@ -124,25 +121,36 @@ export const CardHeader = styled.div`
       font-size: 12px;
     }
   }
+
+  .google-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    opacity: 0.8;
+  }
 `
 
 export const StarsRow = styled.div`
   display: flex;
   gap: 2px;
-  margin-top: 4px;
 `
 
 export const CtaArea = styled.div`
   text-align: center;
-  margin-top: 40px;
+  margin-top: 50px;
 
   a {
     font-weight: 700;
     color: ${colors.primary};
-    text-decoration: underline;
-    font-size: 15px;
-    transition: opacity 0.2s;
+    text-decoration: none;
+    font-size: 16px;
+    border-bottom: 2px solid ${colors.primary}30;
+    padding-bottom: 4px;
+    transition: all 0.2s;
     
-    &:hover { opacity: 0.7; }
+    &:hover { 
+      border-bottom-color: ${colors.primary};
+      color: ${colors.secondary};
+    }
   }
 `

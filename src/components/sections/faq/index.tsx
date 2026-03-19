@@ -8,15 +8,15 @@ const FAQ = () => {
   const questions = [
     {
       question: "Quanto tempo leva para ficar pronto o meu óculos?",
-      answer: "Depende da complexidade da lente, mas como possuímos laboratório próprio, conseguimos entregar muitos modelos em até 24 horas. Lentes especiais podem levar de 3 a 7 dias úteis."
+      answer: "Depende da complexidade da lente conseguimos entregar muitos modelos em até 24 horas até 30 dias para lentes para lentes mais complexas ou com tratamentos especiais."
     },
     {
       question: "Vocês realizam o exame de vista na loja?",
-      answer: "Sim! Temos parceria com profissionais qualificados para realizar sua avaliação visual com equipamentos de última geração. Entre em contato para consultar os dias e horários disponíveis."
+      answer: "Não, mas facilitamos para você realizar sua avaliação visual com profissionais capacitados e com equipamentos de última geração. Entre em contato para consultar os dias e horários disponíveis."
     },
     {
       question: "Quais formas de pagamento vocês aceitam?",
-      answer: "Aceitamos todos os cartões de crédito (parcelamos em até 10x sem juros), Pix e dinheiro. Também trabalhamos com condições especiais para aposentados e pensionistas."
+      answer: "Aceitamos todos os cartões de crédito (parcelamos em até 10x sem juros), Pix e dinheiro."
     },
     {
       question: "Os óculos possuem garantia?",

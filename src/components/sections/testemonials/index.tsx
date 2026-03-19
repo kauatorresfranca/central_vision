@@ -1,5 +1,6 @@
 import * as S from './styles'
 import { Star, MessageSquare, CheckCircle2 } from 'lucide-react'
+import logoGoogle from '../../../assets/images/google-color.png'
 
 const Testimonials = () => {
   const reviews = [
@@ -41,14 +42,17 @@ const Testimonials = () => {
           {reviews.map((rev, index) => (
             <S.ReviewCard key={index}>
               <S.CardHeader>
-                <img src={rev.avatar} alt={rev.name} className="user-avatar" />
-                <div className="user-info">
-                  <div className="name-wrapper">
-                    <strong>{rev.name}</strong>
-                    <CheckCircle2 size={14} fill="#2078f4" color="#fff" />
+                <div className="user-meta">
+                  <img src={rev.avatar} alt={`Foto de ${rev.name}`} className="user-avatar" />
+                  <div className="user-info">
+                    <div className="name-wrapper">
+                      <strong>{rev.name}</strong>
+                      <CheckCircle2 size={14} fill="#2078f4" color="#fff" />
+                    </div>
+                    <span>{rev.date}</span>
                   </div>
-                  <span>{rev.date}</span>
                 </div>
+                <img src={logoGoogle} alt="Google Review" className="google-logo" />
               </S.CardHeader>
 
               <S.StarsRow>
